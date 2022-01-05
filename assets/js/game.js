@@ -103,6 +103,7 @@ var startGame = function() {
     // after the loop ends, player is either out of health or enemies to fight, so run the endGame function
     endGame();
 }
+
 var endGame = function() {
     //if player is still alive. player wins!
     if (playerInfo.health > 0) {
@@ -156,8 +157,18 @@ var randomNumber = function(min, max) {
 
     return value;
 }
+
+//function it set name
+var getPlayerName = function() {
+    var name = "";
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+    }
+    console.log("Your robot's name is " + name);
+    return name;
+};
 var playerInfo = {
-    name: window.prompt("What is you robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
